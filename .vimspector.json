@@ -1,0 +1,30 @@
+{
+  "$schema": "https://puremourning.github.io/vimspector/schema/vimspector.schema.json",
+  "configurations": {
+    "run": {
+      "adapter": "debugpy",
+      "variables": {
+        "venv": {
+          "shell": ["poetry", "env", "info", "-p"]
+        }
+      },
+      "configuration": {
+        "request": "launch",
+        "type": "python",
+        "cwd": "${workspaceRoot}",
+        "python": "${venv}/bin/python",
+        "program": "${workspaceRoot}/vimremote/main.py",
+        "stopOnEntry": false,
+        "console": "integratedTerminal"
+      },
+      "breakpoints": {
+        "exception": {
+          "raised": "N",
+          "uncaught": "",
+          "userUnhandled": ""
+        }
+      }
+    }
+  }
+}
+
